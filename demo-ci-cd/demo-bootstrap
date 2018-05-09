@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+./demo-warmup && \
+./demo-create-projects && \
+./demo-admin-setup && \
+./demo-deploy-demo && \
+./demo-start-pipeline
