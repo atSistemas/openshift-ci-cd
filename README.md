@@ -17,21 +17,11 @@ vagrant up
 
 ```
 #append the following to your /etc/hosts file
-192.168.77.21 console.openshift hawkular-metrics.apps.openshift gogs-cicd.apps.openshift jenkins-cicd.apps.openshift nexus-cicd.apps.openshift sonarqube-cicd.apps.openshift kibana.apps.openshift
+192.168.77.21 console.openshift hawkular-metrics.apps.openshift gogs-cicd.apps.openshift jenkins-cicd.apps.openshift nexus-cicd.apps.openshift kibana.apps.openshift sonarqube-cicd.apps.openshift tasks-dev.apps.openshift tasks-stage.apps.openshift
 ```
 ## Access openshift
 ```
 #username: developer
 #password: any
 https://console.openshift:443
-```
-
-## Deploy CI-CD demo to openshift *WIP*
-```
-#ssh into vagrant vm
-[locahost] vagrant ssh
-[vagrant@origin ~]$  sudo su -
-[root@origin ~]$  cd /vagrant/demo-ci-cd/
-[vagrant@origin ~]$  chmod +x demo-*
-[vagrant@origin ~]$  ./demo-bootstrap
 ```

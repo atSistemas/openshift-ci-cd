@@ -1,15 +1,15 @@
 #!/usr/bin/env bash
 
-oc login -u developer -p any
+/usr/local/bin/oc login -u developer -p any
 # Create Projects
 echo "Creating DEV namespace ..."
-oc new-project dev --display-name="Dev Environment" && \
+/usr/local/bin/oc new-project dev --display-name="Dev Environment" && \
 echo "Creating STAGE namespace ..."
-oc new-project stage --display-name="Stage environment" && \
+/usr/local/bin/oc new-project stage --display-name="Stage environment" && \
 echo "Creating CI/CD namespace ..."
-oc new-project cicd --display-name="CI/CD Management"
+/usr/local/bin/oc new-project cicd --display-name="CI/CD Management"
 
 # Grant Jenkins Access to Projects
 echo "Adding roles to admin user ..."
-oc policy add-role-to-user edit system:serviceaccount:cicd:jenkins -n dev
-oc policy add-role-to-user edit system:serviceaccount:cicd:jenkins -n stage
+/usr/local/bin/oc policy add-role-to-user edit system:serviceaccount:cicd:jenkins -n dev
+/usr/local/bin/oc policy add-role-to-user edit system:serviceaccount:cicd:jenkins -n stage

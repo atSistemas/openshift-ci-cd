@@ -4,4 +4,5 @@
 ./demo-create-projects && \
 ./demo-admin-setup && \
 ./demo-deploy-demo && \
+sleep 5m && \
 ./demo-start-pipeline

@@ -8,7 +8,7 @@ Vagrant.configure("2") do |config|
   config.vm.synced_folder ".idea/", disabled: true
   config.vm.provider "virtualbox" do |v|
     #play with this value
-    v.memory = 12500
+    v.memory = 12000
     v.cpus = 4
   end
 

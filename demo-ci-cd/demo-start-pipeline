@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+/usr/local/bin/oc login -u developer -p any
+/usr/local/bin/oc start-build tasks-pipeline

@@ -4,6 +4,6 @@ curl -o install-openshift.sh https://raw.githubusercontent.com/cmcornejocrespo/i
 chmod +x install-openshift.sh
 time DOMAIN=openshift USERNAME=developer PASSWORD=any ./install-openshift.sh
 
-#cd /vagrant/demo-ci-cd
-#chmod +x demo-*
-#time oc./demo-bootstrap
+cd /vagrant/demo-ci-cd
+chmod +x demo-*
+./demo-bootstrap
