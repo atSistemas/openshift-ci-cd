@@ -9,7 +9,8 @@ echo "Creating STAGE namespace ..."
 echo "Creating CI/CD namespace ..."
 /usr/local/bin/oc new-project cicd --display-name="CI/CD Management"
 
-# Grant Jenkins Access to Projects
+# Give the Jenkins Pod [service account](https://docs.openshift.org/latest/admin_guide/service_accounts.html)
+# rights to do API calls to OpenShift.
 echo "Adding roles to admin user ..."
 /usr/local/bin/oc policy add-role-to-user edit system:serviceaccount:cicd:jenkins -n dev
 /usr/local/bin/oc policy add-role-to-user edit system:serviceaccount:cicd:jenkins -n stage
