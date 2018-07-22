@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 
-/usr/local/bin/oc login -u developer -p any
+oc login -u developer -p any
 # Download ci-cd template and create app from it
-/usr/local/bin/oc new-app -n cicd -f https://raw.githubusercontent.com/cmcornejocrespo/openshift-cd-demo/ocp-3.9/cicd-template.yaml
+oc new-app -n cicd -f https://raw.githubusercontent.com/cmcornejocrespo/openshift-cd-demo/ocp-3.9/cicd-template.yaml

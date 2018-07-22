@@ -2,8 +2,8 @@
 
 curl -o install-openshift.sh https://raw.githubusercontent.com/cmcornejocrespo/installcentos/master/install-openshift.sh
 chmod +x install-openshift.sh
-time DOMAIN="$(hostname -I | cut -d" " -f 2).nip.io" LOGGING=False USERNAME=developer PASSWORD=any ./install-openshift.sh
+time ./install-openshift.sh
 
 cd /vagrant/demo-ci-cd
 chmod +x demo-*
-./demo-bootstrap
+time ./demo-bootstrap

@@ -1,16 +1,16 @@
 #!/usr/bin/env bash
 
-/usr/local/bin/oc login -u developer -p any
+oc login -u developer -p any
 # Create Projects
 echo "Creating DEV namespace ..."
-/usr/local/bin/oc new-project dev --display-name="Dev Environment" && \
+oc new-project dev --display-name="Dev Environment" && \
 echo "Creating STAGE namespace ..."
-/usr/local/bin/oc new-project stage --display-name="Stage environment" && \
+oc new-project stage --display-name="Stage environment" && \
 echo "Creating CI/CD namespace ..."
-/usr/local/bin/oc new-project cicd --display-name="CI/CD Management"
+oc new-project cicd --display-name="CI/CD Management"
 
 # Give the Jenkins Pod [service account](https://docs.openshift.org/latest/admin_guide/service_accounts.html)
 # rights to do API calls to OpenShift.
 echo "Adding roles to admin user ..."
-/usr/local/bin/oc policy add-role-to-user edit system:serviceaccount:cicd:jenkins -n dev
-/usr/local/bin/oc policy add-role-to-user edit system:serviceaccount:cicd:jenkins -n stage
+oc policy add-role-to-user edit system:serviceaccount:cicd:jenkins -n dev
+oc policy add-role-to-user edit system:serviceaccount:cicd:jenkins -n stage
